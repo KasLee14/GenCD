@@ -1,0 +1,56 @@
+﻿{
+    "dataset":  "PTADisc_k3400",
+    "split_ratio":  "8:2",
+    "rules":  {
+                  "sampling":  "Exact user-bucket quotas + stratified user sampling + uncovered-item rescue",
+                  "per_user_original_order_split":  true,
+                  "timestamp_available":  false,
+                  "time_encoding_in_model":  "disabled automatically when timestamp column is absent",
+                  "score_binarization":  "score \u003c 0.75 -\u003e 0.0; score \u003e= 0.75 -\u003e 1.0",
+                  "item_warm_start_fix":  "If an item only appeared in the initial test split, its earliest test row was moved to train.",
+                  "continuous_one_based_ids":  true
+              },
+    "output_rows":  {
+                        "total":  487591,
+                        "train":  390545,
+                        "test":  97046
+                    },
+    "final_sizes":  {
+                        "user_node":  3487,
+                        "item_node":  8399,
+                        "concept_node":  477
+                    },
+    "sample_report":  {
+                          "target_users":  3400,
+                          "final_users":  3487,
+                          "final_interactions":  487591,
+                          "coverage_added_users":  87,
+                          "missing_items_before_rescue":  1116,
+                          "item_coverage_rate":  100.0,
+                          "user_bucket_l1_pp":  1.2111572035779876,
+                          "user_bucket_max_abs_pp":  0.4894262432333374,
+                          "item_prob_tv":  0.036770164224886416,
+                          "item_log_count_corr":  0.9510435728672053,
+                          "top10_share_abs_diff_pp":  0.036035396424969474,
+                          "top50_share_abs_diff_pp":  0.08354216572197537,
+                          "top100_share_abs_diff_pp":  0.33983247673968486,
+                          "quotas":  {
+                                         "0-10":  114,
+                                         "10-20":  376,
+                                         "20-30":  368,
+                                         "30-40":  235,
+                                         "40-50":  267,
+                                         "50-60":  240,
+                                         "60-70":  282,
+                                         "70-80":  209,
+                                         "80-90":  83,
+                                         "90-100":  51,
+                                         "\u003e100":  1175
+                                     },
+                          "seed":  20260401
+                      },
+    "warm_start_fix":  {
+                           "missing_item_test_rows_before_fix":  1702,
+                           "moved_test_rows_to_train":  492
+                       }
+}

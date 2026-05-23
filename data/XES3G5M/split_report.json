@@ -1,0 +1,25 @@
+﻿{
+    "dataset":  "XES3G5M_k1500",
+    "method":  {
+                   "source":  "question_level merged train_valid/test",
+                   "drop_users_with_total_interactions_below":  5,
+                   "sampling_target_users":  1500,
+                   "sampling_final_users":  1520,
+                   "sampling_seed":  20260328,
+                   "concept_coverage_rescue_users":  20,
+                   "per_user_time_order_split":  "8:2",
+                   "item_warm_start_fix":  "If an item only appeared in the initial test split, its earliest test row was moved to train."
+               },
+    "output_rows":  {
+                        "total":  468897,
+                        "train":  375964,
+                        "test":  92933
+                    },
+    "output_sizes":  {
+                         "user_node":  1520,
+                         "item_node":  7190,
+                         "knowledge_node":  865
+                     },
+    "moved_item_count":  860,
+    "missing_item_test_rows_before_fix":  22377
+}

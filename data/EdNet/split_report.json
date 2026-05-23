@@ -1,0 +1,54 @@
+﻿{
+    "dataset":  "EdNet_k900",
+    "split_ratio":  "8:2",
+    "rules":  {
+                  "sampling":  "Exact user-bucket quotas + stratified user sampling + uncovered-item rescue",
+                  "per_user_time_order_split":  true,
+                  "drop_valid_split":  true,
+                  "item_warm_start_fix":  "If an item only appeared in the initial test split, its earliest test row was moved to train.",
+                  "continuous_one_based_ids":  true
+              },
+    "output_rows":  {
+                        "total":  423474,
+                        "train":  338908,
+                        "test":  84566
+                    },
+    "final_sizes":  {
+                        "user_node":  914,
+                        "item_node":  11539,
+                        "concept_node":  187
+                    },
+    "sample_report":  {
+                          "target_users":  900,
+                          "final_users":  914,
+                          "final_interactions":  423474,
+                          "coverage_added_users":  14,
+                          "missing_items_before_rescue":  24,
+                          "item_coverage_rate":  100.0,
+                          "user_bucket_l1_pp":  0.9537761623953755,
+                          "user_bucket_max_abs_pp":  0.3985399745329965,
+                          "item_prob_tv":  0.05570584422841378,
+                          "item_log_count_corr":  0.9760875846553747,
+                          "top10_share_abs_diff_pp":  0.028726912259335532,
+                          "top50_share_abs_diff_pp":  0.09784491174699914,
+                          "top100_share_abs_diff_pp":  0.1468522038014633,
+                          "quotas":  {
+                                         "0-10":  49,
+                                         "10-20":  62,
+                                         "20-30":  47,
+                                         "30-40":  43,
+                                         "40-50":  34,
+                                         "50-60":  35,
+                                         "60-70":  32,
+                                         "70-80":  28,
+                                         "80-90":  24,
+                                         "90-100":  27,
+                                         "\u003e100":  519
+                                     },
+                          "seed":  20260324
+                      },
+    "warm_start_fix":  {
+                           "missing_item_test_rows_before_fix":  353,
+                           "moved_test_rows_to_train":  119
+                       }
+}

@@ -1,0 +1,57 @@
+﻿{
+    "dataset":  "EDM_k4500",
+    "split_ratio":  "8:2",
+    "rules":  {
+                  "interaction_source":  "action_logs.csv",
+                  "keep_actions":  [
+                                       "correct_response",
+                                       "wrong_response"
+                                   ],
+                  "deduplication":  "Keep the first labeled response within each (assignment_log_id, problem_id).",
+                  "drop_items_without_knowledge":  true,
+                  "drop_users_with_interactions_below":  5,
+                  "sampling":  "Exact user-bucket quotas + stratified user sampling + uncovered-skill rescue",
+                  "knowledge_source":  "problem_details.problem_skill_code",
+                  "timestamp_source":  "action_logs.timestamp",
+                  "continuous_one_based_ids":  true
+              },
+    "output_rows":  {
+                        "total":  486886,
+                        "train":  391521,
+                        "test":  95365
+                    },
+    "final_sizes":  {
+                        "user_node":  4504,
+                        "item_node":  31277,
+                        "concept_node":  479
+                    },
+    "sample_report":  {
+                          "target_users":  4500,
+                          "final_users":  4504,
+                          "final_interactions":  486886,
+                          "coverage_added_users":  4,
+                          "missing_skills_before_rescue":  23,
+                          "skill_coverage_rate":  100.0,
+                          "user_bucket_l1_pp":  0.11508088720437043,
+                          "user_bucket_max_abs_pp":  0.030955119469905368,
+                          "final_skill_count":  479,
+                          "quotas":  {
+                                         "0-10":  556,
+                                         "10-20":  715,
+                                         "20-30":  409,
+                                         "30-40":  287,
+                                         "40-50":  232,
+                                         "50-60":  211,
+                                         "60-70":  178,
+                                         "70-80":  163,
+                                         "80-90":  144,
+                                         "90-100":  136,
+                                         "\u003e100":  1469
+                                     },
+                          "seed":  20260326
+                      },
+    "warm_start_fix":  {
+                           "missing_items_before_fix":  4313,
+                           "moved_test_rows_to_train":  2017
+                       }
+}

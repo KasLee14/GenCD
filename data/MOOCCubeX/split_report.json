@@ -1,0 +1,42 @@
+﻿{
+    "dataset":  "MOOCCubeX",
+    "split_ratio":  "8:2",
+    "rules":  {
+                  "keep_only_items_with_knowledge_mapping":  true,
+                  "score_source":  "is_correct",
+                  "timestamp_source":  "submit_time",
+                  "drop_valid_split":  true,
+                  "per_user_time_order_split":  "8:2",
+                  "per_user_min_train_rows":  1,
+                  "per_user_min_test_rows_when_possible":  1,
+                  "item_warm_start_fix":  "If an item only appeared in the initial test split, its earliest test row was moved to train.",
+                  "continuous_one_based_ids":  true
+              },
+    "output_rows":  {
+                        "total":  69546,
+                        "train":  55619,
+                        "test":  13927
+                    },
+    "final_sizes":  {
+                        "user_node":  4264,
+                        "item_node":  2299,
+                        "concept_node":  2090
+                    },
+    "filter_stats":  {
+                         "raw_interactions":  133384333,
+                         "filtered_interactions":  69546,
+                         "filtered_user_count":  4264,
+                         "filtered_problem_count":  2299,
+                         "correct_ones":  53984,
+                         "correct_zeros":  15562,
+                         "min_submit_time":  "2020-05-01 00:06:53",
+                         "max_submit_time":  "2020-12-13 23:26:42",
+                         "final_user_count":  4264,
+                         "final_item_count":  2299,
+                         "final_concept_count":  2090
+                     },
+    "warm_start_fix":  {
+                           "missing_items_before_fix":  302,
+                           "moved_test_rows_to_train":  209
+                       }
+}

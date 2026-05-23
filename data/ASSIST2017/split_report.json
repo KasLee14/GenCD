@@ -1,0 +1,28 @@
+﻿{
+    "dataset":  "ASSIST2017",
+    "method":  {
+                   "merge_source_splits":  [
+                                               "train",
+                                               "valid",
+                                               "test"
+                                           ],
+                   "drop_valid_split":  true,
+                   "per_user_time_order_split":  "8:2",
+                   "per_user_min_train_rows":  1,
+                   "per_user_min_test_rows_when_possible":  1,
+                   "item_warm_start_fix":  "If an item only appeared in the initial test split, its earliest test row was moved to train.",
+                   "id_remap":  "user_id and item_id were remapped to contiguous 1-based ids for the output dataset."
+               },
+    "output_rows":  {
+                        "total":  942814,
+                        "train":  754500,
+                        "test":  188314
+                    },
+    "output_sizes":  {
+                         "user_node":  1708,
+                         "item_node":  3162,
+                         "concept_node":  102
+                     },
+    "moved_item_count":  255,
+    "missing_item_test_rows_before_fix":  1612
+}

@@ -1,0 +1,38 @@
+﻿{
+    "dataset":  "ASSIST2009",
+    "split_ratio":  "8:2",
+    "rules":  {
+                  "drop_users_with_interactions_below":  5,
+                  "drop_items_without_knowledge":  true,
+                  "continuous_one_based_ids":  true,
+                  "timestamp_strategy":  "Synthetic timestamps were created per user. The first interaction is fixed at 2009-01-01 00:00:00, and later rows use order_id deltas in seconds while remaining strictly increasing.",
+                  "knowledge_source":  "problem_id -\u003e skill_id",
+                  "split_strategy":  "Per-user order-based split with one warm-start fix per missing test-only item."
+              },
+    "output_rows":  {
+                        "total":  458093,
+                        "train":  367262,
+                        "test":  90831
+                    },
+    "final_sizes":  {
+                        "user_node":  3695,
+                        "item_node":  17728,
+                        "concept_node":  123
+                    },
+    "filter_stats":  {
+                         "raw_rows":  525534,
+                         "rows_missing_skill":  66326,
+                         "rows_with_knowledge_items":  459208,
+                         "raw_users":  4163,
+                         "kept_users":  3695,
+                         "removed_users_below_5":  468,
+                         "raw_items_with_knowledge":  17751,
+                         "kept_items":  17728,
+                         "rows_after_filter":  458093,
+                         "knowledge_count":  123
+                     },
+    "warm_start_fix":  {
+                           "missing_items_before_fix":  757,
+                           "moved_test_rows_to_train":  757
+                       }
+}
